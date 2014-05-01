@@ -128,7 +128,6 @@ if __name__ == '__main__':
 
     # print the authenticated users folder information
     url = base_url + '/folders/0'
-    url = base_url + '/folders/1448505138/items'
     #url = base_url + '/events'
 
     folders = call_api(url)
@@ -139,21 +138,7 @@ if __name__ == '__main__':
         tokens = get_new_token()
         folders = call_api(url)
 
-    print json.dumps(folders)
-"""
-    for row in folders['entries']:
-        print row['event_type']
-        if row['event_type'] == 'ITEM_UPLOAD':
-            print 'parent, name: ' + row['source']['parent']['name']
-            if row['source']['parent']['name'] == 'Staging':
-                print 'New Item in Staging'
-                print 'Name: ' + row['source']['name']
-                print 'source id: ' + row['source']['id']
-        print ""
-"""
-        #print json.dumps(row, sort_keys=True, indent=2, separators=(',', ': '))
-        
 
     #print json.dumps(folders)
-    #print json.dumps(folders, sort_keys=True, indent=2, separators=(',', ': '))
+    print json.dumps(folders, sort_keys=True, indent=2, separators=(',', ': '))
 
